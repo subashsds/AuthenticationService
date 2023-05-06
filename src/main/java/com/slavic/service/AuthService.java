@@ -45,6 +45,7 @@ public class AuthService {
 		try {
 			String baseUrl = "http://localhost:8084/user/user-details";
 			response = (String) restTemplate.exchange(baseUrl, HttpMethod.POST, request, String.class).getBody();
+			//String status = getthierdparty();
 	}catch (Exception e) {
 		// TODO: handle exception
 		e.printStackTrace();
@@ -58,6 +59,17 @@ public class AuthService {
 		}
 		return res;
 		
+	}
+	
+	
+	public String getthierdparty() {
+		
+		String response = null;
+		
+		System.out.println("http://ec2-18-136-107-153.ap-southeast-1.compute.amazonaws.com:8084/user/getplans_details");
+		String baseUrl = "http://ec2-18-136-107-153.ap-southeast-1.compute.amazonaws.com:8084/user/getplans_details";
+		response = (String) restTemplate.exchange(baseUrl, HttpMethod.GET, null, String.class).getBody();
+		return "success";
 	}
 
 }
