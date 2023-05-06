@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>authentication-Service</artifactId>
+	<artifactId>authentication-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>authentication-Service</name>
+	<name>authentication-service</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

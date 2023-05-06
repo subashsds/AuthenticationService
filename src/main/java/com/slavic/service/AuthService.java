@@ -62,14 +62,6 @@ public class AuthService {
 	}
 	
 	
-	public String getthierdparty() {
-		
-		String response = null;
-		
-		System.out.println("http://ec2-18-136-107-153.ap-southeast-1.compute.amazonaws.com:8084/user/getplans_details");
-		String baseUrl = "http://ec2-18-136-107-153.ap-southeast-1.compute.amazonaws.com:8084/user/getplans_details";
-		response = (String) restTemplate.exchange(baseUrl, HttpMethod.GET, null, String.class).getBody();
-		return "success";
-	}
+
 
 }
