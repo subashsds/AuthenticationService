@@ -48,6 +48,7 @@ public class AuthService {
 		String response = null;
 		try {
 			String baseUrl1 = baseUrl+":8084/user/user-details";
+			//String baseUrl1 = "http://localhost:8084/user/user-details";
 			response = (String) restTemplate.exchange(baseUrl1, HttpMethod.POST, request, String.class).getBody();
 			//String status = getthierdparty();
 	}catch (Exception e) {
