@@ -8,6 +8,7 @@ import javax.ws.rs.BadRequestException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,9 @@ public class AuthService {
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	RestTemplate restTemplate;
+	
+	@Value("${base_url}")
+	String baseUrl;
 
 
 	public ErrorMsg error(Integer code,String message) {
@@ -43,8 +47,8 @@ public class AuthService {
 		HttpEntity<HashMap<String, String>> request = new HttpEntity<HashMap<String, String>>(map);
 		String response = null;
 		try {
-			String baseUrl = "http://localhost:8084/user/user-details";
-			response = (String) restTemplate.exchange(baseUrl, HttpMethod.POST, request, String.class).getBody();
+			String baseUrl1 = baseUrl+":8084/user/user-details";
+			response = (String) restTemplate.exchange(baseUrl1, HttpMethod.POST, request, String.class).getBody();
 			//String status = getthierdparty();
 	}catch (Exception e) {
 		// TODO: handle exception
